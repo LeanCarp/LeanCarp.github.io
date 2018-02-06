@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lavadero Burbujitas</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="cabecera">
+	<img id="logoLav" src="imgs/logoLav.png">
+	<a id="btnmenu" href="#"><img src="imgs/btnresponsive.png"></a>
+	<nav class="menu">
+		<a id="iniciobtn" href="#">Inicio</a>
+		<a id="servyprecbtn" href="#">Servicios y precios</a>
+		<a id="contactobtn" href="#">Contacto</a>
+		<a id="ubicacionbtn" href="#">Ubicación</a>
+	</nav>
+</header>
+<main>
+	<section id="servyprec" class="servyprec">
+		<div class="articulo">
+				<h1 class="precio">$90</h1>
+				<p class="servicio">Lavado y secado</p>
+		</div>
+		<div class="articulo">
+				<h1 class="precio">$50</h1>
+				<p class="servicio">Lavado ó secado</p>
+		</div>
+		<div class="articulo">
+				<h1 class="precio">$150</h1>
+				<p class="servicio">Acolchados y frazadas (Una plaza)</p>	
+		</div>
+		<div class="articulo">
+				<h1 class="precio">$160</h1>
+				<p class="servicio">Acolchados y frazadas (Dos plazas)</p>
+		</div>
+	</section>
+	<section id="contacto" class="contacto">
+		<div class="infoContacto">
+			<h3>Información de contacto</h3>
+			<p>Teléfono: 03446-15476159 <img style="width: 20px; padding-top: 3px" src="imgs/whatsapp.png"></p>
+			<p>Horarios: </p>
+			<p>Lunes a viernes: 8:30 a 12:00</p>
+			<p>Sábados: 8:30 a 13:00</p>
+		</div>
+	</section>
+	<section id="ubicacion" class="ubicacion">
+		<div class="mapaUbicacion">
+			<h3>Ubicación</h3>
+			<p>Dirección: Santa Fe 9, Gualeguaychú, Entre Ríos</p>
+			<iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.806941692638!2d-58.52469968517962!3d-33.008864980902636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95baa82787a474cf%3A0xbec43810d9ac562c!2sLavadero+Burbujitas!5e0!3m2!1ses!2sar!4v1517864552411" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			
+		</div>
+	</section>
+</main>
+<footer class="piepagina">
+	<div class="contenidopie">
+		<div>
+			<nav class="menufooter">
+			<a id="iniciobtn" href="#">Inicio</a>
+			<a id="servyprecbtn1" href="#">Servicios y precios</a>
+			<a id="contactobtn1" href="#">Contacto</a>
+			<a id="ubicacionbtn1" href="#">Ubicación</a>
+			</nav>
+		</div>
+
+		<div class="diseñadapor">
+			<p>Página diseñada y desarrollada por <a target="_blank" href="http://www.facebook.com/ReyLean">Leandro Lonardi</a></p>
+		</div>
+	</div>
+	<p>Lavadero Burbujitas 2018®</p>
+	
+
+</footer>
+</body>
+</html>
+
+<script type="text/javascript">
+	var contador = 0;
+
+	function escondermenu(){
+		if ($(window).width() <= 800)
+		{
+			$(".menu").css("display", "none");
+			contador = 0;
+		}
+	}
+	$( window ).resize(function() {
+		if ($(window).width() > 800)
+		{
+			$(".menu").css("display", "flex");
+			contador = 1;
+		}
+		else
+		{
+			$(".menu").css("display", "none");
+			contador = 0;
+		}
+	});
+	$("#servyprecbtn").click(function(){
+			$("html, body").animate({ scrollTop: $('#servyprec').offset().top }, 1000);
+			escondermenu();
+		});
+	$("#contactobtn").click(function(){
+			$("html, body").animate({ scrollTop: $('#contacto').offset().top }, 1000);
+			escondermenu();
+		});
+	$("#ubicacionbtn").click(function(){
+			$("html, body").animate({ scrollTop: $('#ubicacion').offset().top }, 1000);
+			escondermenu();
+		});
+	$("#servyprecbtn1").click(function(){
+			$("html, body").animate({ scrollTop: $('#servyprec').offset().top }, 1000);
+			escondermenu();
+		});
+	$("#contactobtn1").click(function(){
+			$("html, body").animate({ scrollTop: $('#contacto').offset().top }, 1000);
+			escondermenu();
+		});
+	$("#ubicacionbtn1").click(function(){
+			$("html, body").animate({ scrollTop: $('#ubicacion').offset().top }, 1000);
+			escondermenu();
+		});
+	$("#btnmenu").click(function(){
+		if (contador == 0){
+			$(".menu").css('display','flex');
+			contador = 1;
+		}
+		else{
+			$(".menu").css('display','none');
+			contador = 0;
+		}
+
+		
+	});
+	
+</script>
+
+<style type="text/css">
+body{
+	padding: 0;
+	margin: 0;
+}
+	.cabecera{
+		display: flex;
+		background: #FFF;
+	}
+		#logoLav{
+			width: 180px;
+		}
+
+		.menu{
+			display: flex;
+			justify-content: space-around;
+			margin-top: 10px;
+			margin-left: 50px;
+		}
+		.menu a{
+			padding: 10px;
+			color: black;
+			font-size: 18px;
+			font-family: 'Montserrat', sans-serif;
+			text-decoration: none;
+		}
+
+		.menu a:hover{
+			font-weight: bold;
+		}
+		#btnmenu{
+			display: none;
+		}
+		#btnmenu img{
+			height: 40px;
+			margin: 10px;
+		}
+	.servyprec{
+		background: #EEE;
+		background-image: url(imgs/lavarropa_opt.jpg);
+		background-size: cover;
+		background-position: center center;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.articulo{
+		padding: 25px;
+		width: 25%;
+		text-align: center;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.articulo:hover .servicio{
+		background: #00A1FF;
+		font-weight: bold;
+	}
+	.precio{
+		margin: 0;
+		background: #DBDCE3;
+		font-size: 50px;
+		
+	}
+	.servicio{
+		margin: 0;
+		padding: 20px;
+		background: #33B4FF;
+		font-size: 30px;
+		color: white;
+	}
+	.contacto, .ubicacion{
+		display: flex;
+		justify-content: space-around;
+	}
+	.infoContacto{
+		width: 50%;
+		margin: 25px;
+		text-align: center;
+		font-family: 'Montserrat', sans-serif;
+		background: #33B4FF;
+		color: white;
+	}
+		.infoContacto h3{
+			font-size: 48px;
+		}
+		.infoContacto p{
+			font-size: 24px;
+		}
+	.ubicacion{
+		background: #948E82;
+		background-image: url(imgs/mapafondo_opt.jpg);
+		background-size: cover;
+		background-position: center center;
+	}
+		.ubicacion h3{
+			font-size: 48px;
+			margin: 10px;
+			text-align: center;
+			font-family: 'Montserrat', sans-serif;
+		}
+		.mapaUbicacion{
+		width: 50%;
+		margin: 25px;
+		text-align: center;
+		font-family: 'Montserrat', sans-serif;
+		background: #33B4FF;
+		color: white;
+		}
+		.mapa{
+			margin: 20px;
+		}
+	.piepagina{
+		text-align: center;
+		font-family: 'Montserrat', sans-serif;
+		background: #FFF;
+		color: black;
+	}
+
+	.piepagina p{
+		margin: 0;
+	}
+
+	.menufooter{
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		padding: 20px;
+	}
+	.menufooter a{
+		color: black;
+		padding: 3px;
+		text-decoration: none;
+	}
+
+		.menufooter a:hover{
+			font-weight: bold;
+		}
+
+	.contenidopie{
+		display: flex;
+		justify-content: space-around;
+	}
+		.diseñadapor{
+			width: 25%;
+			padding: 50px;
+		}
+		.diseñadapor a{
+			color: black;
+		}
+	@media screen and (max-width:800px){
+		.cabecera{
+			justify-content: space-between;
+		}
+		#btnmenu{
+			display: block;
+		}
+		.menu{
+			display: none;
+			flex-direction: column;
+			position: absolute;
+			margin-top: 66px;
+			z-index: 2;
+			float: left;
+			background: white;
+			margin-left: 0px;
+			width: 100%;
+		}
+		.servyprec{
+			z-index: 1;
+			flex-direction: column;
+		}
+
+		.articulo{
+			width: 80%;
+		}
+
+		.infoContacto{
+			width: 80%;
+		}
+			.infoContacto h3, .ubicacion h3{
+				font-size: 36px;
+			}
+			.infoContacto p{
+				font-size: 24px;
+			}
+
+		.mapa{
+			display: none;
+		} 
+		.mapaUbicacion{
+			width: 80%;
+		}
+		.contenidopie{
+			flex-direction: column;
+		}
+			.menufooter{
+				text-align: center;
+			}
+			.diseñadapor{
+				display: flex;
+				margin: 0 auto;
+				justify-content: space-around;
+			}
+	}
+</style>
